@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $modelo->actualizarContraseña($cliente['correo'], $hash);
 
         // Limpiar token
-        $modelo->guardarTokenRecuperacion($cliente['correo'], null);
+        $modelo->guardarTokenRecuperacion($cliente['correo'], '');
+
 
         $_SESSION['msg'] = "✅ Tu contraseña fue actualizada. Inicia sesión.";
         header("Location: login_cliente.php");
