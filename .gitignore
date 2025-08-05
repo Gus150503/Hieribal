@@ -1,0 +1,3 @@
+# Ignorar archivos con claves privadas
+vista/google_config.php
+.env
