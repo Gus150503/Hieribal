@@ -1,0 +1,160 @@
+/* RESET BÁSICO */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* TÍTULO */
+h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* CONTENEDOR */
+.table-responsive {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* TABLA */
+#tablaUsuarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tablaUsuarios thead {
+  background-color: #007bff;
+  color: white;
+}
+
+#tablaUsuarios th, #tablaUsuarios td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tablaUsuarios tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#tablaUsuarios tbody tr:hover {
+  background-color: #eef2f7;
+}
+
+/* BOTÓN ESTADO */
+.toggle-estado.btn-success::before {
+  content: "✅ ";
+}
+.toggle-estado.btn-secondary::before {
+  content: "❌ ";
+}
+
+/* BOTONES ACCIÓN */
+.btn-editar {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.btn-editar::before {
+  content: "✏️ ";
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.btn-eliminar::before {
+  content: "🗑️ ";
+}
+
+/* BOTÓN CREAR */
+button[data-bs-target="#modalCrearUsuario"] {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+/* PAGINACIÓN */
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 30px !important;
+  text-align: center !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #fff !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  margin: 0 3px;
+  color: #007bff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #007bff !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* INPUT BUSCAR */
+.dataTables_filter input {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  outline: none;
+  transition: 0.3s;
+}
+.dataTables_filter input:focus {
+  border-color: #007bff;
+}
+
+/* SELECT CANTIDAD */
+.dataTables_length select {
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+/* INFO */
+.dataTables_info {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* MODALES BONITOS */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  border-bottom: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-close {
+  filter: invert(1);
+}

@@ -1,0 +1,151 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    background-color: #f8f9fa;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    flex: 1;
+    background-color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: -60px;
+    margin-left: -30px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+        .google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            color: #444;
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+
+        .google-btn:hover {
+            background-color: #f1f1f1;
+            border-color: #bbb;
+        }
+
+        .google-btn img {
+            width: 18px !important;
+            height: 18px !important;
+            object-fit: contain;
+            display: inline-block;
+        }
+
+.separator {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+.separator span {
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+}
+.separator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid #ccc;
+    z-index: -1;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.extras {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: black;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.bottom-link {
+    margin-top: 30px;
+    font-size: 13px;
+}
+.bottom-link a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.right-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.right-panel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.6); /* opcional para suavizar el fondo */
+}
+
+.form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Comienza desde arriba */
+}
