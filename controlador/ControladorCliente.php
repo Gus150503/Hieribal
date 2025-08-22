@@ -76,25 +76,34 @@ class ControladorCliente extends ControladorBase {
         }
 
         $this->setSesion('cliente', $cliente);
+if (isset($_POST['recordar'])) {
+    setcookie('cliente_recordado', $correo, [
+        'expires'  => time() + 86400*30,
+        'path'     => '/',
+        'secure'   => !empty($_SERVER['HTTPS']), // true si usas HTTPS
+        'httponly' => false,                     // pon true si NO la lees con JS
+        'samesite' => 'Lax',
+    ]);
+}
 
-        if (isset($_POST['recordar'])) {
-            setcookie('cliente_recordado', $correo, time() + (86400 * 30), "/");
-        }
 
-        $this->redirigir("../vista/clientes.php");
+        $this->redirigir("../app.php?ruta=inicio");
     }
 
-    public function logout() {
-        $this->destruirSesion();
-        setcookie('cliente_recordado', '', time() - 3600, "/");
-        $this->redirigir("../vista/login_cliente.php");
-    }
+ public function logout() {
+    $this->destruirSesion();
+    setcookie('cliente_recordado', '', time() - 3600, "/");
+    $this->redirigir("../index.php"); // mejor a la portada
+}
+
+
+    
 
     public function loginAutomaticoPorCookie($correo) {
     $cliente = $this->modelo->buscarPorCorreo($correo);
     if ($cliente) {
         $this->setSesion('cliente', $cliente);
-        $this->redirigir("../vista/clientes.php");
+       $this->redirigir("../app.php?ruta=inicio");
     }
 }
 
