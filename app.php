@@ -1,20 +1,26 @@
 <?php
-// app.php
 declare(strict_types=1);
-session_start();
+if (session_status() === PHP_SESSION_NONE) session_start();
 
 $ruta = strtolower($_GET['ruta'] ?? 'inicio');
 
-$esUsuario = isset($_SESSION['usuario']); // admin/empleado
-$esCliente = isset($_SESSION['cliente']); // cliente
+$esUsuario = isset($_SESSION['usuario']);
+$esCliente = isset($_SESSION['cliente']);
 
-// Si no hay sesión -> login de cliente (puedes cambiarlo a un selector)
+// Si por error hay ambas sesiones, prioriza cliente (o la que prefieras)
+if ($esUsuario && $esCliente) {
+  // elige una estrategia:
+  // unset($_SESSION['usuario']);  // priorizar cliente
+  // o unset($_SESSION['cliente']); // priorizar usuario
+  $esUsuario = isset($_SESSION['usuario']);
+  $esCliente = isset($_SESSION['cliente']);
+}
+
 if (!$esUsuario && !$esCliente) {
   header('Location: vista/login_cliente.php');
   exit;
 }
 
-// Listas blancas
 $routesUsuario = [
   'inicio'   => 'vista/dashboard.php',
   'usuarios' => 'vista/usuarios.php',
@@ -29,7 +35,6 @@ $routesCliente = [
   'logout'  => 'vista/logout_cliente.php',
 ];
 
-// Resolver vista
 $view = $esUsuario
   ? ($routesUsuario[$ruta] ?? 'vista/404.php')
   : ($routesCliente[$ruta] ?? 'vista/404.php');
